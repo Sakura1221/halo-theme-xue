@@ -74,19 +74,18 @@ function dealContentToc() {
     if (getClientWidth() > 1359) {
         initToc();
         scrollTocFixed();
-    } else {
-        var smallToc = $('.moon-menu-item.icon-toc');
-        if (smallToc) {
-            smallToc.toggleClass('hidden');
-            // 渲染目录
-            initMoonToc()
-        }
-
-        $(document).click(function (e) {
-            var target = e.target;
-            documentClickToc(target);
-        });
     }
+    var smallToc = $('.moon-menu-item.icon-toc');
+    if (smallToc) {
+        smallToc.toggleClass('hidden');
+        // 渲染目录
+        initMoonToc()
+    }
+
+    $(document).click(function (e) {
+        var target = e.target;
+        documentClickToc(target);
+    });
 }
 
 /**
