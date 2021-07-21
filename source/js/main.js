@@ -75,18 +75,19 @@ function dealContentToc() {
         initToc();
         scrollTocFixed();
     }
-    
+}
+
+function dealSmallToc() {    
     var smallToc = $('.moon-menu-item.icon-toc');
     if (smallToc) {
         smallToc.toggleClass('hidden');
         // 渲染目录
         initMoonToc()
-        
-        $(document).click(function (e) {
-        var target = e.target;
-        documentClickToc(target);
-    });
     }
+    $(document).click(function (e) {
+    var target = e.target;
+    documentClickToc(target);
+    });
 }
 
 /**
@@ -957,6 +958,7 @@ $(function () {
     // 目录相关
     if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
         dealContentToc();
+        dealSmallToc();
     }
 
     if ($('#container').find('.md-content').length > 0 && format) {
