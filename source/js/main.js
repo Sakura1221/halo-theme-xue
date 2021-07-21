@@ -75,17 +75,18 @@ function dealContentToc() {
         initToc();
         scrollTocFixed();
     }
+    
     var smallToc = $('.moon-menu-item.icon-toc');
     if (smallToc) {
         smallToc.toggleClass('hidden');
         // 渲染目录
         initMoonToc()
-    }
-
-    $(document).click(function (e) {
+        
+        $(document).click(function (e) {
         var target = e.target;
         documentClickToc(target);
     });
+    }
 }
 
 /**
